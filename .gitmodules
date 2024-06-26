@@ -4,3 +4,6 @@
 [submodule "src/hector_quadrotor"]
 	path = src/hector_quadrotor
 	url = https://github.com/alstondu/hector_quadrotor.git
+[submodule "src/hector_gazebo"]
+	path = src/hector_gazebo
+	url = https://github.com/alstondu/hector_gazebo.git
