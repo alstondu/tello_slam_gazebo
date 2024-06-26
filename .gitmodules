@@ -1,0 +1,3 @@
+[submodule "src/tello_ros_gazebo"]
+	path = src/tello_ros_gazebo
+	url = https://github.com/alstondu/tello_ros_gazebo.git
