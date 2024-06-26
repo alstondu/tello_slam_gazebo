@@ -1,15 +1,15 @@
 [submodule "src/tello_ros_gazebo"]
 	path = src/tello_ros_gazebo
-	url = https://github.com/alstondu/tello_ros_gazebo.git
+	url = git@github.com:alstondu/tello_ros_gazebo.git
 [submodule "src/hector_quadrotor"]
 	path = src/hector_quadrotor
-	url = https://github.com/alstondu/hector_quadrotor.git
+	url = git@github.com:alstondu/hector_quadrotor.git
 [submodule "src/hector_gazebo"]
 	path = src/hector_gazebo
-	url = https://github.com/alstondu/hector_gazebo.git
+	url = git@github.com:alstondu/hector_gazebo.git
 [submodule "src/hector_localization"]
 	path = src/hector_localization
 	url = git@github.com:alstondu/hector_localization.git
 [submodule "src/orb_slam3_ros"]
 	path = src/orb_slam3_ros
-	url = https://github.com/alstondu/orb_slam3_ros.git
+	url = git@github.com:alstondu/orb_slam3_ros.git
