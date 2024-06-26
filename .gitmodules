@@ -10,3 +10,6 @@
 [submodule "src/hector_localization"]
 	path = src/hector_localization
 	url = https://github.com/alstondu/hector_localization.git
+[submodule "src/orb_slam3_ros"]
+	path = src/orb_slam3_ros
+	url = https://github.com/alstondu/orb_slam3_ros.git
