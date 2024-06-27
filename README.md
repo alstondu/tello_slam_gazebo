@@ -44,6 +44,11 @@ This project is to simulate DJI Tello drone in Gazebo to perform simultaneous lo
 > **Click to watch the video demonstration.**
 [![Mono ORB_SLAM3 with DJI Tello Drone in Gazebo](https://img.youtube.com/vi/5ND-YgJewG4/maxresdefault.jpg)](https://youtu.be/5ND-YgJewG4 "Mono ORB_SLAM3 with DJI Tello Drone in Gazebo")
 
+Ape comparison w/wo scale alignment from [evo](https://github.com/MichaelGrupp/evo)
+<div align="center">
+<img width="100%" src="https://github.com/alstondu/tello_slam_gazebo/blob/main/media/mono_evo.png?raw=true"></a>
+</div>
+  
 ---
 ## 🗂️ Repository Structure
 
@@ -73,6 +78,8 @@ Quadrotor controller support | [hector_quadrotor](https://github.com/alstondu/he
 Visual SLAM | [orb_slam3_ros](https://github.com/alstondu/orb_slam3_ros)
 Tello model and discription | [tello_ros_gazebo](https://github.com/alstondu/tello_ros_gazebo)
 
+To evaluate the trajectory obtained, [evo](https://github.com/MichaelGrupp/evo) is required.
+
 ---
 ## ⚙️ Installation
 
@@ -90,7 +97,9 @@ catkin build
 
 ###  Monocular SLAM
 
-#### Launch the system in terminal 1:
+#### Launch the Main System:
+
+> Launch the system in terminal 1:
 
 ```
 roslaunch tello_driver tello.launch
@@ -137,22 +146,30 @@ evo_ape tum ground_truth_state.txt orb_slam3_ros_camera_pose.txt -vas -r full -p
 
 <br>
 
-> Launch the world with calibration board and tello:
+<div align="center">
+<img width="100%" src="https://github.com/alstondu/tello_slam_gazebo/blob/main/media/cam_cal.jpg?raw=true"></a>
+</div>
+
+<br>
+
+> Launch the world with the calibration board and the tello in terminal 1:
 
 ```
 roslaunch tello_driver cam_cal.launch
 ```
 
-> Run keyboard teleop node in terminal 2:
+> Run the keyboard teleop node in terminal 2:
 
 ```
-rosrun keyboard_teleop keyboard_teleop_node.py _repeat_rate:=10.0
+roslaunch tello_driver keyboard_teleop_node.launch
 ```
+
 > Run cam_calibration node:
 
 ```
 rosrun cam_calibration cameracalibrator.py --size 7x7 --square 0.25 image:=/front_cam/camera/image camera:=/front_cam
 ```
+
 > Drive the drone around the board until ```X, Y, Size, Skew``` all turn green. Click on the 'CALIBRATE' button, 'Save' the parameters and exit with 'COMMIT'.
 </details>
 
