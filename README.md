@@ -42,7 +42,18 @@ TO DO
 
 ---
 ## 🗂️ Repository Structure
-TO DO
+
+```sh
+└── tello_slam_gazebo/
+    ├── src
+    |   ├── [hector_gazebo](git@github.com:alstondu/hector_quadrotor.git)
+    |   ├── [hector_localization](git@github.com:alstondu/hector_localization.git)
+    |   ├── [hector_quadrotor](git@github.com:alstondu/hector_quadrotor.git)
+    |   ├── [orb_slam3_ros](git@github.com:alstondu/orb_slam3_ros.git)
+    │   └── [tello_ros_gazebo](git@github.com:alstondu/tello_ros_gazebo.git)
+    ├── LICENSE
+    └── README.md
+```
 
 ---
 ## 🚀 Pre-Requisites
@@ -105,6 +116,7 @@ evo_ape tum ground_truth_state.txt orb_slam3_ros_camera_pose.txt -vas -r full -p
 
 ---
 ## 🤖 Extra Instructions
+<details closed><summary>Camera Calibration</summary>
 
 ### Camera Calibration
 > Launch the world with calibration board and tello:
@@ -124,6 +136,7 @@ rosrun keyboard_teleop keyboard_teleop_node.py _repeat_rate:=10.0
 rosrun cam_calibration cameracalibrator.py --size 7x7 --square 0.25 image:=/front_cam/camera/image camera:=/front_cam
 ```
 > Drive the drone around the board until ```X, Y, Size, Skew``` all turn green. Click on the 'CALIBRATE' button, 'Save' the parameters and exit with 'COMMIT'.
+</details>
 
 ---
 ## 📄 License
