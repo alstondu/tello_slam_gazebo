@@ -41,9 +41,6 @@ This project is to simulate DJI Tello drone in Gazebo to perform simultaneous lo
 
 **Mono SLAM:**
 
-[![UCL COMP0129 CW3 Task3 Demo](https://img.youtube.com/vi/w0Qg0BLzrIw/0.jpg)](https://www.youtube.com/watch?v=w0Qg0BLzrIw)
-
-
 ---
 ## 🗂️ Repository Structure
 
