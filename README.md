@@ -47,10 +47,10 @@ This project is to simulate DJI Tello drone in Gazebo to perform simultaneous lo
 ```sh
 └── tello_slam_gazebo/
     ├── src
-    |   ├── [hector_gazebo](git@github.com:alstondu/hector_quadrotor.git)
-    |   ├── [hector_localization](git@github.com:alstondu/hector_localization.git)
-    |   ├── [hector_quadrotor](git@github.com:alstondu/hector_quadrotor.git)
-    |   ├── [orb_slam3_ros](git@github.com:alstondu/orb_slam3_ros.git)
+    │   ├── [hector_gazebo](git@github.com:alstondu/hector_quadrotor.git)
+    │   ├── [hector_localization](git@github.com:alstondu/hector_localization.git)
+    │   ├── [hector_quadrotor](git@github.com:alstondu/hector_quadrotor.git)
+    │   ├── [orb_slam3_ros](git@github.com:alstondu/orb_slam3_ros.git)
     │   └── [tello_ros_gazebo](git@github.com:alstondu/tello_ros_gazebo.git)
     ├── media
     ├── LICENSE
