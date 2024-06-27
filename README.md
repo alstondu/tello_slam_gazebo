@@ -40,6 +40,10 @@ This project is to simulate DJI Tello drone in Gazebo to perform simultaneous lo
 ## 👾 Demo
 TO DO
 
+**Standard CLI Usage:**
+
+[readmeai-cli-demo](https://www.youtube.com/watch?v=w0Qg0BLzrIw)
+
 ---
 ## 🗂️ Repository Structure
 
@@ -51,6 +55,7 @@ TO DO
     |   ├── [hector_quadrotor](git@github.com:alstondu/hector_quadrotor.git)
     |   ├── [orb_slam3_ros](git@github.com:alstondu/orb_slam3_ros.git)
     │   └── [tello_ros_gazebo](git@github.com:alstondu/tello_ros_gazebo.git)
+    ├── media
     ├── LICENSE
     └── README.md
 ```
@@ -70,6 +75,9 @@ catkin build
 
 ---
 ## ► Running
+> [!TIP]
+>
+> <sub>source the workspace in each terminal before entering the command.</sub>
 
 ###  Monocular SLAM
 
