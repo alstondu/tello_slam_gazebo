@@ -41,8 +41,8 @@ This project is to simulate DJI Tello drone in Gazebo to perform simultaneous lo
 
 **Mono SLAM:**
 
-<video controls>
-    <source src=https://github.com/alstondu/tello_slam_gazebo/blob/main/media/test_video.mp4 type="video/mp4" />
+<video width="400" controls>
+  <source src="media/test_video.mp4" type="video/mp4">
 </video>
 
 ---
