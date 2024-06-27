@@ -72,7 +72,7 @@ See prerequisites of each submodule.
 
 Submodule | Employed system
 ------------ | -------------
-Sensors and plugins support | [hector_gazebo](https://github.com/alstondu/hector_gazebo)
+Gazebo plugins support | [hector_gazebo](https://github.com/alstondu/hector_gazebo)
 TF and localization support | [hector_localization](https://github.com/alstondu/hector_localization)
 Quadrotor controller support | [hector_quadrotor](https://github.com/alstondu/hector_quadrotor)
 Visual SLAM | [orb_slam3_ros](https://github.com/alstondu/orb_slam3_ros)
