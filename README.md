@@ -1,13 +1,19 @@
-<img src="https://raw.githubusercontent.com/alstondu/Tello-SLAM/fbfb2d10c64432fe60b3cd47ad782f9ca4442845/fig/drone-thin.svg" width="100" />
+<p align="center">
+    <img src="https://raw.githubusercontent.com/alstondu/Tello-SLAM/fbfb2d10c64432fe60b3cd47ad782f9ca4442845/fig/drone-thin.svg" width="100" />
+</p>
 
-# tello_slam_gazebo
-Visual SLAM with DJI Tello in Gazebo
+<p align="center">
+    <h1 align="center">TELLO_SLAM_GAZEBO</h1>
+</p>
+<p align="center">
+    <em>ORB_SLAM3 with DJI Tello in Gazebo</em>
+</p>
 
-<div align="left">
+<div align="center">
 <img src="https://img.shields.io/github/license/alstondu/tello_slam_gazebo ?style=flat-square&color=5D6D7E" alt="GitHub license" />
 <img src="https://img.shields.io/github/last-commit/alstondu/tello_slam_gazebo?style=flat-square&color=5D6D7E" alt="git-last-commit" />
 <img src="https://img.shields.io/github/commit-activity/m/alstondu/tello_slam_gazebo?style=flat-square&color=5D6D7E" alt="GitHub commit activity" />
-<img src="https://img.shields.io/github/languages/top/alstondu/tello_slam_gazebo?style=flat-square&color=5D6D7E" alt="GitHub top language" />
+<img src="https://img.shields.io/github/languages/top/alstondu/tello_slam_gazebo?style=flat&color=0080ff" alt="repo-top-language">
 </div>
 
 ## 🔗 Quick Links
@@ -15,7 +21,7 @@ Visual SLAM with DJI Tello in Gazebo
 > - [🤝 Author](#-author)
 > - [📍 Overview](#-overview)
 > - [👾  Demo](#-demo)
-> - [🗂️ Structure](#-structure)
+> - [🗂️ Repository Structure](#-repository-structure)
 > - [🚀 Pre-Requisites](#-pre-requisites)
 > - [⚙️ Installation](#️-installation)
 > - [► Running](#-running)
@@ -35,7 +41,7 @@ This project is to simulate DJI Tello drone in Gazebo to perform simultaneous lo
 TO DO
 
 ---
-## 🗂️ Structure
+## 🗂️ Repository Structure
 TO DO
 
 ---
@@ -64,7 +70,7 @@ roslaunch tello_driver tello.launch
 
 #### Keyboard Control (To Do: Joystick Control)
 
-Run teleop node in terminal 2:
+> Run teleop node in terminal 2:
 
 ```
 rosrun keyboard_teleop keyboard_teleop_node.py _repeat_rate:=10.0
@@ -72,7 +78,7 @@ rosrun keyboard_teleop keyboard_teleop_node.py _repeat_rate:=10.0
 
 #### Save trajectory
 
-Before driving the drone, in terminal 3, record the predicted trajectory(```/orb_slam3_ros/camera_pose```) and the ground truth(```/ground_truth/state```) as rosbag:
+> Before driving the drone, in terminal 3, record the predicted trajectory(```/orb_slam3_ros/camera_pose```) and the ground truth(```/ground_truth/state```) as rosbag:
 
 ```
 rosbag record /orb_slam3_ros/camera_pose /ground_truth/state
@@ -80,18 +86,18 @@ rosbag record /orb_slam3_ros/camera_pose /ground_truth/state
 
 #### EVO Evaluation
 
-Convert the saved rosbag to tum format:
+> Convert the saved rosbag to tum format:
 
 ```
 evo_traj bag [bag_name] /orb_slam3_ros/camera_pose /ground_truth/state --save_as_tum
 ```
 
-Change the suffix of the files from ```.tum``` to ```.txt```, plot the trajectories with(```-a``` for alignment, ```-as``` for alignment and scale):
+> Change the suffix of the files from ```.tum``` to ```.txt```, plot the trajectories with(```-a``` for alignment, ```-as``` for alignment and scale):
 
 ```
 evo_traj tum orb_slam3_ros_camera_pose.txt --ref ground_truth_state.txt -a -p --plot_mode=xyz
 ```
-For APE (Absolute Pose Error), run:
+> For APE (Absolute Pose Error), run:
 
 ```
 evo_ape tum ground_truth_state.txt orb_slam3_ros_camera_pose.txt -vas -r full -p --plot_mode=xyz
@@ -101,23 +107,23 @@ evo_ape tum ground_truth_state.txt orb_slam3_ros_camera_pose.txt -vas -r full -p
 ## 🤖 Extra Instructions
 
 ### Camera Calibration
-Launch the world with calibration board and tello:
+> Launch the world with calibration board and tello:
 
 ```
 roslaunch tello_driver cam_cal.launch
 ```
 
-Run keyboard teleop node in terminal 2:
+> Run keyboard teleop node in terminal 2:
 
 ```
 rosrun keyboard_teleop keyboard_teleop_node.py _repeat_rate:=10.0
 ```
-Run cam_calibration node:
+> Run cam_calibration node:
 
 ```
 rosrun cam_calibration cameracalibrator.py --size 7x7 --square 0.25 image:=/front_cam/camera/image camera:=/front_cam
 ```
-Drive the drone around the board until ```X, Y, Size, Skew``` all turn green. Click on the 'CALIBRATE' button, 'Save' the parameters and exit with 'COMMIT'.
+> Drive the drone around the board until ```X, Y, Size, Skew``` all turn green. Click on the 'CALIBRATE' button, 'Save' the parameters and exit with 'COMMIT'.
 
 ---
 ## 📄 License
