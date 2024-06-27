@@ -118,7 +118,6 @@ evo_ape tum ground_truth_state.txt orb_slam3_ros_camera_pose.txt -vas -r full -p
 ## 🤖 Extra Instructions
 <details closed><summary>Camera Calibration</summary>
 
-### Camera Calibration
 > Launch the world with calibration board and tello:
 
 ```
