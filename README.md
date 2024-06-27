@@ -14,10 +14,12 @@ Visual SLAM with DJI Tello in Gazebo
 
 > - [🤝 Author](#-author)
 > - [📍 Overview](#-overview)
-> - [🤖 Demo](#-demo)
+> - [👾  Demo](#-demo)
+> - [🗂️ Structure](#-structure)
 > - [🚀 Pre-Requisites](#-pre-requisites)
 > - [⚙️ Installation](#️-installation)
 > - [► Running](#-running)
+> - [🤖 Extra Instructions](#-extra-instructions)
 > - [📄 License](#-license)
 
 ---
@@ -29,7 +31,11 @@ Yuang Du (ucab190@ucl.ac.uk)
 This project is to simulate DJI Tello drone in Gazebo to perform simultaneous localization and mapping (SLAM) using ORB_SLAM3.
 
 ---
-## 🤖 Demo
+## 👾 Demo
+TO DO
+
+---
+## 🗂️ Structure
 TO DO
 
 ---
@@ -44,9 +50,57 @@ git clone --recursive git@github.com:alstondu/tello_slam_gazebo.git
 cd tello_slam_gazebo
 catkin build
 ```
+
 ---
 ## ► Running
-### 1. Camera Calibration
+
+###  Monocular SLAM
+
+#### Launch the system in terminal 1:
+
+```
+roslaunch tello_driver tello.launch
+```
+
+#### Keyboard Control (To Do: Joystick Control)
+
+Run teleop node in terminal 2:
+
+```
+rosrun keyboard_teleop keyboard_teleop_node.py _repeat_rate:=10.0
+```
+
+#### Save trajectory
+
+Before driving the drone, in terminal 3, record the predicted trajectory(```/orb_slam3_ros/camera_pose```) and the ground truth(```/ground_truth/state```) as rosbag:
+
+```
+rosbag record /orb_slam3_ros/camera_pose /ground_truth/state
+```
+
+#### EVO Evaluation
+
+Convert the saved rosbag to tum format:
+
+```
+evo_traj bag [bag_name] /orb_slam3_ros/camera_pose /ground_truth/state --save_as_tum
+```
+
+Change the suffix of the files from ```.tum``` to ```.txt```, plot the trajectories with(```-a``` for alignment, ```-as``` for alignment and scale):
+
+```
+evo_traj tum orb_slam3_ros_camera_pose.txt --ref ground_truth_state.txt -a -p --plot_mode=xyz
+```
+For APE (Absolute Pose Error), run:
+
+```
+evo_ape tum ground_truth_state.txt orb_slam3_ros_camera_pose.txt -vas -r full -p --plot_mode=xyz
+```
+
+---
+## 🤖 Extra Instructions
+
+### Camera Calibration
 Launch the world with calibration board and tello:
 
 ```
@@ -65,48 +119,7 @@ rosrun cam_calibration cameracalibrator.py --size 7x7 --square 0.25 image:=/fron
 ```
 Drive the drone around the board until ```X, Y, Size, Skew``` all turn green. Click on the 'CALIBRATE' button, 'Save' the parameters and exit with 'COMMIT'.
 
-### 2. Monocular SLAM
-1. Launch the system in terminal 1:
-
-	```
-	roslaunch tello_driver tello.launch
-	```
-
-2.  Keyboard Control(To Do: Joystick Control)
-
-	Run teleop node in terminal 2:
-
-	```
-	rosrun keyboard_teleop keyboard_teleop_node.py _repeat_rate:=10.0
-	```
-
-3.  Save trajectory
-
-	Before driving the drone, in terminal 3, record the predicted trajectory(```/orb_slam3_ros/camera_pose```) and the ground truth(```/ground_truth/state```) as rosbag:
-	
-	```
-	rosbag record /orb_slam3_ros/camera_pose /ground_truth/state
-	```
-
-4.  EVO Evaluation
-
-	Convert the saved rosbag to tum format:
-	
-	```
-	evo_traj bag [bag_name] /orb_slam3_ros/camera_pose /ground_truth/state --save_as_tum
-	```
-	
-	Change the suffix of the files from ```.tum``` to ```.txt```, plot the trajectories with(```-a``` for alignment, ```-as``` for alignment and scale):
-	
-	```
-	evo_traj tum orb_slam3_ros_camera_pose.txt --ref ground_truth_state.txt -a -p --plot_mode=xyz
-	```
-	For APE(Absolute Pose Error), run:
-	
-	```
-	evo_ape tum ground_truth_state.txt orb_slam3_ros_camera_pose.txt -vas -r full -p --plot_mode=xyz
-	```
-
+---
 ## 📄 License
 LICENSE: MIT.  See [LICENSE.txt](https://github.com/alstondu/tello_slam_gazebo/blob/main/LICENSE)
 
@@ -123,4 +136,4 @@ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS INFORMATION AND/OR
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-Copyright (C) 2019-2024 Dimitrios Kanoulas except where specified
+Copyright (C) 2019-2024 Yuang Du except where specified
