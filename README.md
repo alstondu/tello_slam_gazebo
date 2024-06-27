@@ -41,6 +41,9 @@ This project is to simulate DJI Tello drone in Gazebo to perform simultaneous lo
 
 **Mono SLAM:**
 
+> **Click to watch the video demonstration.**
+[![Mono ORB_SLAM3 with Tello Drone in Gazebo](https://img.youtube.com/vi/gN-nVBvbKRQ/maxresdefault.jpg)](https://youtu.be/gN-nVBvbKRQ "Mono ORB_SLAM3 with Tello Drone in Gazebo")
+
 ---
 ## 🗂️ Repository Structure
 
@@ -59,7 +62,16 @@ This project is to simulate DJI Tello drone in Gazebo to perform simultaneous lo
 
 ---
 ## 🚀 Pre-Requisites
-TO DO
+
+See prerequisites of each submodule.
+
+Submodule | Employed system
+------------ | -------------
+Sensors and plugins support | [hector_gazebo](https://github.com/alstondu/hector_gazebo)
+TF and localization support | [hector_localization](https://github.com/alstondu/hector_localization)
+Quadrotor controller support | [hector_quadrotor](https://github.com/alstondu/hector_quadrotor)
+Visual SLAM | [orb_slam3_ros](https://github.com/alstondu/orb_slam3_ros)
+Tello model and discription | [tello_ros_gazebo](https://github.com/alstondu/tello_ros_gazebo)
 
 ---
 ## ⚙️ Installation
@@ -160,5 +172,3 @@ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS INFORMATION AND/OR
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-Copyright (C) 2019-2024 Yuang Du except where specified
