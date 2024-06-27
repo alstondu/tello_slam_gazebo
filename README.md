@@ -42,7 +42,7 @@ TO DO
 
 **Standard CLI Usage:**
 
-[readmeai-cli-demo](https://www.youtube.com/watch?v=w0Qg0BLzrIw)
+[readmeai-cli-demo](https://github.com/alstondu/tello_slam_gazebo/blob/main/media/test_video.mp4)
 
 ---
 ## 🗂️ Repository Structure
