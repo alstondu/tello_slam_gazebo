@@ -42,7 +42,7 @@ This project is to simulate DJI Tello drone in Gazebo to perform simultaneous lo
 **Mono SLAM:**
 
 > **Click to watch the video demonstration.**
-[![Mono ORB_SLAM3 with Tello Drone in Gazebo](https://img.youtube.com/vi/gN-nVBvbKRQ/maxresdefault.jpg)](https://youtu.be/gN-nVBvbKRQ "Mono ORB_SLAM3 with Tello Drone in Gazebo")
+[![Mono ORB_SLAM3 with DJI Tello Drone in Gazebo](https://img.youtube.com/vi/5ND-YgJewG4/maxresdefault.jpg)](https://youtu.be/5ND-YgJewG4 "Mono ORB_SLAM3 with DJI Tello Drone in Gazebo")
 
 ---
 ## 🗂️ Repository Structure
