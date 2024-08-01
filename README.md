@@ -167,7 +167,7 @@ roslaunch tello_driver keyboard_teleop_node.launch
 > Run cam_calibration node:
 
 ```
-rosrun cam_calibration cameracalibrator.py --size 7x7 --square 0.25 image:=/front_cam/camera/image camera:=/front_cam
+rosrun camera_calibration cameracalibrator.py --size 7x7 --square 0.25 image:=/front_cam/camera/image camera:=/front_cam
 ```
 
 > Drive the drone around the board until ```X, Y, Size, Skew``` all turn green. Click on the 'CALIBRATE' button, 'Save' the parameters and exit with 'COMMIT'.
